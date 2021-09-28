@@ -8,8 +8,7 @@ Contact::Contact()
 
 Contact::~Contact()
 {
-	this->cmd = "1";
-
+	this->instance = this->instance + 0;
 }
 
 std::string read()
@@ -24,9 +23,8 @@ std::string read()
 
 std::string Contact::get_var(std::string foo, int id)
 {
-	if (foo == "cmd")
-		return (this->cmd);
-	else if (foo == "first_name")
+
+	if (foo == "first_name")
 		return (this->first_name[id]);
 	else if (foo == "last_name")
 		return (this->last_name[id]);
@@ -41,9 +39,8 @@ std::string Contact::get_var(std::string foo, int id)
 
 void Contact::set_var(std::string foo, std::string set, int id)
 {
-	if (foo == "cmd")
-		this->cmd = set;
-	else if (foo == "first_name")
+
+	if (foo == "first_name")
 		this->first_name[id] = set;
 	else if (foo == "last_name")
 		this->last_name[id] = set;
