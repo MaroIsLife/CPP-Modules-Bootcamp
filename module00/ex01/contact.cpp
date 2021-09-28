@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string.h>
+#include <string>
 #include "contact.hpp"
 
 Contact::Contact()
@@ -15,7 +17,7 @@ std::string read()
 {
 	std::string cmd;
 	char c;
-	
+	std::cout << "------------"
 	std::cout << "Insert a Command: ";
 	std::cin >> cmd;
 	return (cmd);
@@ -26,6 +28,8 @@ std::string Contact::get_var(std::string foo, int id)
 
 	if (foo == "first_name")
 		return (this->first_name[id]);
+	else if (foo == "instance")
+		return (std::to_string(id));
 	else if (foo == "last_name")
 		return (this->last_name[id]);
 	else if (foo == "nickname")
@@ -78,6 +82,38 @@ void add(Contact *abc)
 }
 
 
+void print_search(std::string str, Contact *abc, int i)
+{
+	std::string str1 = "          "  + abc->get_var(str, i);
+	std::cout << str1.substr(abc->get_var(str, i).length(), 100) << "|";
+}
+void search(Contact *abc)
+{
+	int i;
+	int b;
+
+	if (abc->instance > 0)
+	{
+
+		std::cout << "|-------------------------------------------|\n";
+		std::cout << "|     Index|First Name| Last Name|  Nickname|\n";
+		std::cout << "|-------------------------------------------|\n";
+		b = 0;
+		while (b < abc->instance)
+		{
+			std::cout << "|";
+			print_search("instance", abc, b);
+			print_search("first_name", abc, b);
+			print_search("last_name", abc, b);
+			print_search("nickname", abc, b);
+			std::cout << "\n";
+			b++;
+		}
+		std::cout << "|-------------------------------------------|\n";
+	}
+}
+
+
 int main()
 {
 	std::string cmd;
@@ -90,6 +126,8 @@ int main()
 			exit(0);
 		else if (cmd == "ADD")
 			add(&abc);
+		else if (cmd == "SEARCH")
+			search(&abc);
 	}
 
 	return (0);
