@@ -6,6 +6,7 @@
 Contact::Contact()
 {
 	this->instance = 0;
+	this->c = 0;
 }
 
 Contact::~Contact()
@@ -16,9 +17,12 @@ Contact::~Contact()
 std::string read()
 {
 	std::string cmd;
-	char c;
-	std::cout << "------------"
-	std::cout << "Insert a Command: ";
+
+	std::cout << "---------\n";
+	std::cout << "Commands:\n";
+	std::cout << "*ADD\n*SEARCH\n*EXIT\n";
+	std::cout << "---------\n";
+	std::cout << "> ";
 	std::cin >> cmd;
 	return (cmd);
 }
@@ -60,6 +64,8 @@ void add(Contact *abc)
 {
 	std::string test;
 
+	std::cout << abc->c << "\n";
+	std::cout << abc->instance << "\n";
 	std::cout << "Enter the First Name: ";
 	std::cin >> test;
 	abc->set_var("first_name", test ,abc->instance);
@@ -75,10 +81,15 @@ void add(Contact *abc)
 	std::cout << "Enter the Darkest Secret: ";
 	std::cin >> test;
 	abc->set_var("darkest_secret", test ,abc->instance);
+	abc->instance++;
 	if (abc->instance == 8)
 		abc->instance = 0;
+	if (abc->c == 8)
+		abc->c = 8;
 	else
-		abc->instance++;
+		abc->c++;
+
+		
 }
 
 
@@ -89,17 +100,18 @@ void print_search(std::string str, Contact *abc, int i)
 }
 void search(Contact *abc)
 {
-	int i;
-	int b;
+	int 		i;
+	int 		b;
 
-	if (abc->instance > 0)
+	std::cout << abc->c << "\n";
+	std::cout << abc->instance << "\n";
+	std::cout << "|-------------------------------------------|\n";
+	std::cout << "|     Index|First Name| Last Name|  Nickname|\n";
+	std::cout << "|-------------------------------------------|\n";
+	if (abc->c > 0)
 	{
-
-		std::cout << "|-------------------------------------------|\n";
-		std::cout << "|     Index|First Name| Last Name|  Nickname|\n";
-		std::cout << "|-------------------------------------------|\n";
 		b = 0;
-		while (b < abc->instance)
+		while (b < abc->c)
 		{
 			std::cout << "|";
 			print_search("instance", abc, b);
@@ -109,7 +121,7 @@ void search(Contact *abc)
 			std::cout << "\n";
 			b++;
 		}
-		std::cout << "|-------------------------------------------|\n";
+	std::cout << "|-------------------------------------------|\n";
 	}
 }
 
@@ -129,6 +141,5 @@ int main()
 		else if (cmd == "SEARCH")
 			search(&abc);
 	}
-
 	return (0);
 }

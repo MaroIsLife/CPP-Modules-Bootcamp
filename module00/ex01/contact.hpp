@@ -14,6 +14,7 @@ private:
 
 public:
 	int			instance;
+	int	c;
 	std::string	get_var(std::string foo, int id);
 	void		set_var(std::string foo, std::string set, int id);
 	Contact(void);
