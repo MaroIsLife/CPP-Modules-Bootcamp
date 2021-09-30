@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string.h>
 #include <string>
 #include "contact.hpp"
 
@@ -64,8 +63,7 @@ void add(Contact *abc)
 {
 	std::string test;
 
-	std::cout << abc->c << "\n";
-	std::cout << abc->instance << "\n";
+
 	std::cout << "Enter the First Name: ";
 	std::cin >> test;
 	abc->set_var("first_name", test ,abc->instance);
@@ -102,9 +100,8 @@ void search(Contact *abc)
 {
 	int 		i;
 	int 		b;
+	std::string			c;
 
-	std::cout << abc->c << "\n";
-	std::cout << abc->instance << "\n";
 	std::cout << "|-------------------------------------------|\n";
 	std::cout << "|     Index|First Name| Last Name|  Nickname|\n";
 	std::cout << "|-------------------------------------------|\n";
@@ -121,10 +118,33 @@ void search(Contact *abc)
 			std::cout << "\n";
 			b++;
 		}
-	std::cout << "|-------------------------------------------|\n";
+	// std::cout << "|-------------------------------------------|\n";
 	}
+	std::cout << "Index > ";
+	std::cin >> c;
+	
+	std::cout << c << "\n";
+	// exit(1);
+	// while (std::isdigit(a1) == 0)
+	// {
+	// 	std::cout << "Please Insert a number\n";
+	// 	std::cout << "Index > ";
+	// 	std::cin >> c;
+	// }
+	// if (c >= 0 && c <= 7 && abc->c > c)
+	// {
+	// 	std::cout << "|-------------------------------------------|\n";
+	// 	std::cout << "|     Index|First Name| Last Name|  Nickname|\n";
+	// 	std::cout << "|-------------------------------------------|\n";
+	// 	std::cout << "|";
+	// 	print_search("instance", abc, c);
+	// 	print_search("first_name", abc, c);
+	// 	print_search("last_name", abc, c);
+	// 	print_search("nickname", abc, c);
+	// 	std::cout << "\n";
+	// 	// std::cout << "|-------------------------------------------|\n";
+	// }
 }
-
 
 int main()
 {
