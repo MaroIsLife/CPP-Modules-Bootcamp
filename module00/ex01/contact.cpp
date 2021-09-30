@@ -86,8 +86,6 @@ void add(Contact *abc)
 		abc->c = 8;
 	else
 		abc->c++;
-
-		
 }
 
 
@@ -96,11 +94,19 @@ void print_search(std::string str, Contact *abc, int i)
 	std::string str1 = "          "  + abc->get_var(str, i);
 	std::cout << str1.substr(abc->get_var(str, i).length(), 100) << "|";
 }
+
+bool is_number(std::string str)
+{
+	for (int i = 0; i < str.length(); i++)
+	if (isdigit(str[i]) == false)
+	  return false;
+	return true;
+}
+
 void search(Contact *abc)
 {
-	int 		i;
-	int 		b;
-	std::string			c;
+	int 				i;
+	int 				b;
 
 	std::cout << "|-------------------------------------------|\n";
 	std::cout << "|     Index|First Name| Last Name|  Nickname|\n";
@@ -120,10 +126,25 @@ void search(Contact *abc)
 		}
 	// std::cout << "|-------------------------------------------|\n";
 	}
-	std::cout << "Index > ";
-	std::cin >> c;
-	
-	std::cout << c << "\n";
+	while (1)
+	{
+		std::string			c;
+		int					a1;
+
+		std::cout << "Index > ";
+		std::cin >> c;
+
+		if (is_number(c) == true)
+			a1 = std::stoi(c);
+		else
+		{
+			std::cout << "Please Insert a number\n";
+			continue ;
+		}
+		std::cout << std::stoi(c) << "\n";
+		break ;
+	}
+
 	// exit(1);
 	// while (std::isdigit(a1) == 0)
 	// {
