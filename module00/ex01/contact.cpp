@@ -54,6 +54,15 @@ void Contact::set_var(std::string foo, std::string set, int id)
 		this->darkest_secret[id] = set;
 }
 
+void check_length(std::string *test)
+{
+	if (test->length() > 10)
+	{
+		*test = test->substr(0,10);
+		test[0][9] = '.';
+	}
+}
+
 void add(Contact *abc)
 {
 	std::string test;
@@ -61,18 +70,23 @@ void add(Contact *abc)
 
 	std::cout << "Enter the First Name: ";
 	std::cin >> test;
+	check_length(&test);
 	abc->set_var("first_name", test ,abc->instance);
 	std::cout << "Enter the Last Name: ";
 	std::cin >> test;
+	check_length(&test);
 	abc->set_var("last_name", test ,abc->instance);
 	std::cout << "Enter the Nickname: ";
 	std::cin >> test;
+	check_length(&test);
 	abc->set_var("nickname", test ,abc->instance);
 	std::cout << "Enter the Phone Number: ";
 	std::cin >> test;
+	check_length(&test);
 	abc->set_var("phone_number", test ,abc->instance);
 	std::cout << "Enter the Darkest Secret: ";
 	std::cin >> test;
+	check_length(&test);
 	abc->set_var("darkest_secret", test ,abc->instance);
 	abc->instance++;
 	if (abc->instance == 8)
