@@ -7,6 +7,11 @@ int main(int ac, char **av)
     int b;
 
     i = 1;
+    if (ac == 1)
+    {
+        std::cout << "*LOUD AND UNBEARABLE FEEDBACK NOISE*\n";
+        exit(0);
+    }
     while (av[i] != NULL)
     {
         b = 0;
