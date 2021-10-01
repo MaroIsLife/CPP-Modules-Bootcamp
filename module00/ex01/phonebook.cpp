@@ -12,7 +12,7 @@ void check_length(std::string *test)
 
 bool is_number(std::string str)
 {
-	for (int i = 0; i < str.length(); i++)
+	for (int i = 0; i < (int)str.length(); i++)
 	if (isdigit(str[i]) == false)
 	  return false;
 	return true;
@@ -51,7 +51,6 @@ std::string Phonebook::read()
 
 void Phonebook::search(Contact *abc)
 {
-	int 				i;
 	int 				b;
 	int					a1;
 
