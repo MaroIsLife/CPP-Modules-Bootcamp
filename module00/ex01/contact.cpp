@@ -8,11 +8,6 @@ Contact::Contact()
 	this->c = 0;
 }
 
-Contact::~Contact()
-{
-	this->instance = this->instance + 0;
-}
-
 std::string read()
 {
 	std::string cmd;
@@ -88,7 +83,6 @@ void add(Contact *abc)
 		abc->c++;
 }
 
-
 void print_search(std::string str, Contact *abc, int i)
 {
 	std::string str1 = "          "  + abc->get_var(str, i);
@@ -103,10 +97,21 @@ bool is_number(std::string str)
 	return true;
 }
 
+void	print_search_all(Contact *abc, int b)
+{
+	std::cout << "|";
+	print_search("instance", abc, b);
+	print_search("first_name", abc, b);
+	print_search("last_name", abc, b);
+	print_search("nickname", abc, b);
+	std::cout << "\n";
+}
+
 void search(Contact *abc)
 {
 	int 				i;
 	int 				b;
+	int					a1;
 
 	std::cout << "|-------------------------------------------|\n";
 	std::cout << "|     Index|First Name| Last Name|  Nickname|\n";
@@ -116,20 +121,13 @@ void search(Contact *abc)
 		b = 0;
 		while (b < abc->c)
 		{
-			std::cout << "|";
-			print_search("instance", abc, b);
-			print_search("first_name", abc, b);
-			print_search("last_name", abc, b);
-			print_search("nickname", abc, b);
-			std::cout << "\n";
+			print_search_all(abc, b);
 			b++;
 		}
-	// std::cout << "|-------------------------------------------|\n";
 	}
 	while (1)
 	{
 		std::string			c;
-		int					a1;
 
 		std::cout << "Index > ";
 		std::cin >> c;
@@ -141,30 +139,16 @@ void search(Contact *abc)
 			std::cout << "Please Insert a number\n";
 			continue ;
 		}
-		std::cout << std::stoi(c) << "\n";
 		break ;
 	}
-
-	// exit(1);
-	// while (std::isdigit(a1) == 0)
-	// {
-	// 	std::cout << "Please Insert a number\n";
-	// 	std::cout << "Index > ";
-	// 	std::cin >> c;
-	// }
-	// if (c >= 0 && c <= 7 && abc->c > c)
-	// {
-	// 	std::cout << "|-------------------------------------------|\n";
-	// 	std::cout << "|     Index|First Name| Last Name|  Nickname|\n";
-	// 	std::cout << "|-------------------------------------------|\n";
-	// 	std::cout << "|";
-	// 	print_search("instance", abc, c);
-	// 	print_search("first_name", abc, c);
-	// 	print_search("last_name", abc, c);
-	// 	print_search("nickname", abc, c);
-	// 	std::cout << "\n";
-	// 	// std::cout << "|-------------------------------------------|\n";
-	// }
+	if (a1 > abc->c - 1)
+		std::cout << "Invalid Index\n";
+	else
+	{
+		std::cout << "|-------------------------------------------|\n";
+		print_search_all(abc, a1);
+		std::cout << "|-------------------------------------------|\n";
+	}
 }
 
 int main()
