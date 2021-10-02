@@ -1,5 +1,6 @@
 #include "contact.hpp"
 #include "phonebook.hpp"
+#include <iomanip>
 
 void check_length(std::string *test)
 {
@@ -31,8 +32,8 @@ void	print_search_all(Contact *abc, int b, Phonebook *ph)
 
 void Phonebook::print_search(std::string str, Contact *abc, int i)
 {
-	std::string str1 = "          "  + abc->get_var(str, i);
-	std::cout << str1.substr(abc->get_var(str, i).length(), 100) << "|";
+	std::cout << std::setw(10);
+	std::cout << abc->get_var(str, i) << "|";
 }
 
 std::string Phonebook::read()
@@ -95,6 +96,7 @@ void Phonebook::search(Contact *abc)
 void Phonebook::add(Contact *abc)
 {
 	std::string test;
+	
 
 
 	std::cout << "Enter the First Name: ";
@@ -109,9 +111,20 @@ void Phonebook::add(Contact *abc)
 	std::cin >> test;
 	check_length(&test);
 	abc->set_var("nickname", test ,abc->instance);
-	std::cout << "Enter the Phone Number: ";
-	std::cin >> test;
-	check_length(&test);
+	while (1)
+	{	std::cout << "Enter the Phone Number: ";
+		std::cin >> test;
+		if (is_number(test) == true)
+		{
+			check_length(&test);
+			break;
+		}
+		else
+		{
+			std::cout << "Please Insert a phone number\n";
+			continue ;
+		}
+	}
 	abc->set_var("phone_number", test ,abc->instance);
 	std::cout << "Enter the Darkest Secret: ";
 	std::cin >> test;
