@@ -6,11 +6,11 @@ class Contact
 {
 
 private:
-	std::string first_name[7];
-	std::string last_name[7];
-	std::string nickname[7];
-	std::string phone_number[7];
-	std::string darkest_secret[7];
+	std::string first_name[8];
+	std::string last_name[8];
+	std::string nickname[8];
+	std::string phone_number[8];
+	std::string darkest_secret[8];
 
 public:
 	int			instance;
@@ -19,6 +19,4 @@ public:
 	void		set_var(std::string foo, std::string set, int id);
 	Contact(void);
 };
-
-
 #endif
