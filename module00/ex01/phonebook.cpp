@@ -2,6 +2,16 @@
 #include "phonebook.hpp"
 #include <iomanip>
 
+
+void check_eof()
+{
+	if (std::cin.eof())
+	{
+		std::cout << "EOF byeeeeee\n";
+		exit(0);
+	}	
+}
+
 void check_length(std::string *test)
 {
 	if (test->length() > 10)
@@ -46,6 +56,7 @@ std::string Phonebook::read()
 	std::cout << "---------\n";
 	std::cout << "> ";
 	std::cin >> cmd;
+	check_eof();	
 	return (cmd);
 }
 
@@ -73,7 +84,7 @@ void Phonebook::search(Contact *abc)
 
 		std::cout << "Index > ";
 		std::cin >> c;
-
+		check_eof();
 		if (is_number(c) == true)
 			a1 = std::stoi(c);
 		else
@@ -101,19 +112,23 @@ void Phonebook::add(Contact *abc)
 
 	std::cout << "Enter the First Name: ";
 	std::cin >> test;
+	check_eof();
 	check_length(&test);
 	abc->set_var("first_name", test ,abc->instance);
 	std::cout << "Enter the Last Name: ";
 	std::cin >> test;
+	check_eof();
 	check_length(&test);
 	abc->set_var("last_name", test ,abc->instance);
 	std::cout << "Enter the Nickname: ";
 	std::cin >> test;
+	check_eof();
 	check_length(&test);
 	abc->set_var("nickname", test ,abc->instance);
 	while (1)
 	{	std::cout << "Enter the Phone Number: ";
 		std::cin >> test;
+		check_eof();
 		if (is_number(test) == true)
 		{
 			check_length(&test);
@@ -128,6 +143,7 @@ void Phonebook::add(Contact *abc)
 	abc->set_var("phone_number", test ,abc->instance);
 	std::cout << "Enter the Darkest Secret: ";
 	std::cin >> test;
+	check_eof();
 	check_length(&test);
 	abc->set_var("darkest_secret", test ,abc->instance);
 	abc->instance++;
