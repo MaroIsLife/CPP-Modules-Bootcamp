@@ -1,4 +1,4 @@
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRC = main.cpp Zombie.cpp ZombieHorde.cpp
 CC = clang++ -std=c++98
 
 all: Zombie
