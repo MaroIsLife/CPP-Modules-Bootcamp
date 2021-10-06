@@ -9,6 +9,8 @@ private:
 
 public:
 	std::string const	&getType();
-ç};
+	void				setType(std::string type);
+
+};
 
 #endif

@@ -1,4 +1,4 @@
-SRC = main.cpp
+SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 CC = clang++ -std=c++98
 
 all: weapon
