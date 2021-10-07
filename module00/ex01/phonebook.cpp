@@ -98,9 +98,17 @@ void Phonebook::search(Contact *abc)
 		std::cout << "Invalid Index\n";
 	else
 	{
-		std::cout << "|-------------------------------------------|\n";
-		print_search_all(abc, a1, this);
-		std::cout << "|-------------------------------------------|\n";
+		std::cout << "|-----------------------------------------------------------------|\n";
+		std::cout << "|     Index|First Name| Last Name|  Nickname|    Number|    Secret|\n";
+		std::cout << "|";
+		print_search("instance", abc, a1);
+		print_search("first_name", abc, a1);
+		print_search("last_name", abc, a1);
+		print_search("nickname", abc, a1);
+		print_search("phone_number", abc, a1);
+		print_search("darkest_secret", abc, a1);
+		std::cout << "\n";
+		std::cout << "|-----------------------------------------------------------------|\n";
 	}
 }
 
