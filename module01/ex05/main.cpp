@@ -6,7 +6,7 @@ int main()
 {
 	Karen abc;
 
-	abc.complain("DEBUG");
+	abc.complain("ERROR");
 
 	return (0);
 }

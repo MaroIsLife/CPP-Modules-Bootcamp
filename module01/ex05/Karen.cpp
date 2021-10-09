@@ -6,7 +6,10 @@ void Karen::complain(std::string level)
 	int i;
 	
 	// https://stackoverflow.com/questions/42824383/a-value-of-type-void-cannot-be-assigned-to-an-entity-of-type-int-last
+	
 	//https://www.ibm.com/docs/en/i/7.4?topic=only-pointers-members-c
+
+	//Ach had Syntax de 🤢
 	this->ptr[0] = &Karen::error;	
 	this->ptr[1] = &Karen::warning;
 	this->ptr[2] = &Karen::debug;
@@ -22,8 +25,11 @@ void Karen::complain(std::string level)
 	i = 0;
 	while (i < 4)
 	{
-		if (level == test[i])
+		while (level == test[i])
+		{
 			(this->*ptr[i]) ();
+			break ;
+		}
 		i++;
 	}
 }
