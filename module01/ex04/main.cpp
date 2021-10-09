@@ -2,7 +2,6 @@
 #include <string>
 #include <fstream>
 
-
 void check_error(int ac, char **av)
 {
 	if (ac != 4)
@@ -17,6 +16,12 @@ void check_error(int ac, char **av)
 	}
 }
 
+void error_found()
+{
+	std::cout << "Error\n";
+	exit(0);
+}
+
 int main(int ac, char **av)
 {
 	std::string filename;
@@ -24,18 +29,26 @@ int main(int ac, char **av)
 	std::string s2;
 	std::string string_read;
 	int 		found;
-
 	check_error(ac, av);
 	filename = av[1];
 	s1 = av[2];
 	s2 = av[3];
-	std::ifstream ifs(filename);	
-	std::ofstream ofs(filename + ".replace");
-	if (ifs == 0 || ofs == 0)
+	if (s1 == s2)
 	{
-		std::cout << "Error\n";
+		std::cout << "Identical strings given" << std::endl;
 		exit(0);
 	}
+	std::ifstream ifs(filename);
+	if (ifs == 0)
+		error_found();
+	if (ifs.peek() == -1)
+	{
+		std::cout << "Empty File" << std::endl;
+		exit(0);
+	}
+	std::ofstream ofs(filename + ".replace");
+	if (ofs == 0)
+		error_found();
 	while (getline(ifs, string_read))
 	{
 		while (1)

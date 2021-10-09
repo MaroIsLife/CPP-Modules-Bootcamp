@@ -37,6 +37,7 @@ void Karen::complain(std::string level)
 void Karen::error(void)
 {
 	std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl;
+	
 }
 
 void Karen::info(void)
