@@ -3,14 +3,29 @@
 
 void Karen::complain(std::string level)
 {
-	if (level == "ERROR")
-		this->error();
-	else if (level == "WARNING")
-		this->warning();
-	else if (level == "INFO")
-		this->info();
-	else if (level == "DEBUG")
-		this->debug();
+	int i;
+	
+	// https://stackoverflow.com/questions/42824383/a-value-of-type-void-cannot-be-assigned-to-an-entity-of-type-int-last
+	//https://www.ibm.com/docs/en/i/7.4?topic=only-pointers-members-c
+	this->ptr[0] = &Karen::error;	
+	this->ptr[1] = &Karen::warning;
+	this->ptr[2] = &Karen::debug;
+	this->ptr[3] = &Karen::info;
+
+	std::string test[4] = {
+		"ERROR",
+		"WARNING",
+		"DEBUG",
+		"INFO"
+	};
+
+	i = 0;
+	while (i < 4)
+	{
+		if (level == test[i])
+			(this->*ptr[i]) ();
+		i++;
+	}
 }
 
 void Karen::error(void)
