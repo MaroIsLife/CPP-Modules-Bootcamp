@@ -2,22 +2,27 @@
 
 
 #include <iostream>
-using namespace std;
 class Fraction
 {
-    int num, den;
+    int num;
 public:
     Fraction(int n) { num = n; }
   
-    // conversion operator: return float value of fraction
     Fraction operator+ (Fraction &obj)
 	{
-		Fraction res(1);
-
-		res.num = num + obj.num;
-		return (res);
+		Fraction res(0);
+		
+		std::cout << "This Num " << this->num << " res.num " << res.num << " obj.num " << obj.num << std::endl;
+		res.num = this->num * obj.num;
+		return (1000);
 	}
-	 void print() { cout << num << endl; }
+
+	void  operator<< (int a)
+	{
+		num = a + 1;
+		std::cout << this->num << std::endl;
+	}
+	 void print() { std::cout << num << std::endl; }
 };
   
 int main() 
