@@ -3,15 +3,13 @@
 
 Fixed::Fixed() : _nFixed(0)
 {
-	// this->_nFraction = 8;
 	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(int n)
 {
-	// this->_nFraction = 8;
 	this->_nFixed = this->power(n / 2, this->_nFraction);
-   std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed &p)
