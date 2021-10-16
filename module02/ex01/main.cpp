@@ -21,3 +21,5 @@ int main()
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	return (0);
 }
+
+//https://embeddedartistry.com/blog/2018/07/12/simple-fixed-point-conversion-in-c/
