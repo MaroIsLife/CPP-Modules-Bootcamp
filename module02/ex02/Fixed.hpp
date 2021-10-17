@@ -19,25 +19,21 @@ public:
 	bool	operator<(Fixed const &ref);
 	bool	operator>=(Fixed const &ref);
 	bool	operator<=(Fixed const &ref);
-	bool	operator==(Fixed const &ref);
+	bool	operator==(Fixed const &ref); ////https://stackoverflow.com/questions/1691007/whats-the-right-way-to-overload-operator-for-a-class-hierarchy
 	bool	operator!=(Fixed const &ref);
 	Fixed	&operator+(Fixed const &ref);
 	Fixed	&operator-(Fixed const &ref);
 	Fixed	&operator*(Fixed const &ref);
-	Fixed	&operator/(Fixed const &ref);
-	Fixed	&operator++(int type);
-	Fixed	&operator++(int type);
-	Fixed	&operator--(int type);
-	Fixed	&operator--(int type);
-	Fixed	&operator/(Fixed const &ref);
+	Fixed	&operator++();
+	Fixed	&operator++(int);
+	Fixed	&operator--();
+	Fixed	&operator--(int);
 	Fixed	&operator/(Fixed const &ref);
 
-	
-
+	static Fixed &min(Fixed const &ref1, Fixed const &ref2);
+	static Fixed &max(Fixed const &ref1, Fixed const &ref2);
 	float toFloat( void ) const;
 	int toInt( void ) const;
-	int getValue(void) const;
-
 };
 std::ostream &operator<<(std::ostream &out, Fixed const &ref);
 
