@@ -2,30 +2,25 @@
 
 Fixed::Fixed() : _value(0)
 {
-	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const &p)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	this->_value = p._value;
 }
 
 Fixed::Fixed(int n)
 {
-	std::cout << "Int constructor called" << std::endl;
 	this->_value = (int)std::roundf(n * (1 << this->_nFraction));
 }
 
 Fixed::Fixed(float n)
 {
-	std::cout << "Float constructor called" << std::endl;
 	this->_value = (float)std::roundf((n * (float)(1 << this->_nFraction)));
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
 }
 
 float Fixed::toFloat(void) const
@@ -38,12 +33,11 @@ int Fixed::toInt(void) const
     return (int)(std::roundf(this->_value / (1 << this->_nFraction)));
 }
 
-// Fixed &Fixed::operator=(Fixed const &ref)
-// {
-// 	std::cout << "Assignation operator called " << std::endl;
-// 	this->_value = ref._value;
-// 	return *this;
-// }
+Fixed &Fixed::operator=(Fixed const &ref)
+{
+	this->_value = ref._value;
+	return (*this);
+}
 
 std::ostream &operator<<(std::ostream &out, Fixed const &ref)
 {
@@ -130,31 +124,31 @@ Fixed &Fixed::operator--(int)
 	return (*this);
 }
 
-Fixed &Fixed::operator*(Fixed const &ref)
+Fixed Fixed::operator*(Fixed const &ref)
 {
-	this->_value = this->_value * ref._value;
-	return (*this);
+	Fixed abc(this->toFloat() * ref.toFloat());
+	return (abc);
 }
 
-Fixed &Fixed::operator-(Fixed const &ref)
+Fixed Fixed::operator-(Fixed const &ref)
 {
-	this->_value = this->_value - ref._value;
-	return (*this);
+	Fixed abc(this->toFloat() - ref.toFloat());
+	return (abc);
 }
 
-Fixed &Fixed::operator/(Fixed const &ref)
+Fixed Fixed::operator/(Fixed const &ref)
 {
-	this->_value = this->_value / ref._value;
-	return (*this);
+	Fixed abc(this->toFloat() / ref.toFloat());
+	return (abc);
 }
 
-Fixed &Fixed::operator+(Fixed const &ref)
+Fixed Fixed::operator+(Fixed const &ref)
 {
-	this->_value = this->_value + ref._value;
-	return (*this);
+	Fixed abc(this->toFloat() + ref.toFloat());
+	return (abc);
 }
 
-static Fixed const &max(Fixed const &ref1, Fixed const &ref2)
+Fixed const &Fixed::max(Fixed const &ref1, Fixed const &ref2)
 {
 	if (ref1.toFloat() > ref2.toFloat()) // !! Check later why I can't use _value private member attribute
 		return (ref1);
@@ -162,13 +156,10 @@ static Fixed const &max(Fixed const &ref1, Fixed const &ref2)
 		return (ref2);
 }
 
-static Fixed const &min(Fixed const &ref1, Fixed const &ref2)
+Fixed const &Fixed::min(Fixed const &ref1, Fixed const &ref2)
 {
 	if (ref1.toFloat() < ref2.toFloat()) // !! Check later why I can't use _value private member attribute
 		return (ref1);
 	else
 		return (ref2);
 }
-
-
-
