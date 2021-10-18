@@ -106,10 +106,12 @@ Fixed &Fixed::operator++()
 	return (*this);
 }
 
-Fixed &Fixed::operator++(int)
+Fixed Fixed::operator++(int)
 {
-	this->_value++;
-	return (*this);
+	//https://stackoverflow.com/questions/15244094/c-overloading-for-both-pre-and-post-increment
+	Fixed abc(*this); 
+	++(*this);
+	return (abc);
 }
 
 Fixed &Fixed::operator--()
@@ -118,10 +120,11 @@ Fixed &Fixed::operator--()
 	return (*this);
 }
 
-Fixed &Fixed::operator--(int)
+Fixed Fixed::operator--(int)
 {
-	this->_value--;
-	return (*this);
+	Fixed abc(*this); 
+	++(*this);
+	return (abc);
 }
 
 Fixed Fixed::operator*(Fixed const &ref)

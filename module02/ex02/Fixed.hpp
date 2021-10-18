@@ -26,9 +26,9 @@ public:
 	Fixed	operator/(Fixed const &ref);
 	Fixed	operator*(Fixed const &ref);
 	Fixed	&operator++();
-	Fixed	&operator++(int);
+	Fixed	operator++(int);
 	Fixed	&operator--();
-	Fixed	&operator--(int);
+	Fixed	operator--(int);
 	Fixed 	&operator=(Fixed const &ref);
 
 	static const Fixed &min(Fixed const &ref1, Fixed const &ref2); //__attribute__((unused)) c++11
