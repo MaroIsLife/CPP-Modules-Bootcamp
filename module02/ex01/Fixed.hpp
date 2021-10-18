@@ -16,9 +16,8 @@ public:
 	~Fixed();
 	Fixed(Fixed const &p);
 	Fixed	&operator=(Fixed const &ref);
-	float toFloat( void ) const;
-	int toInt( void ) const;
-	int getValue(void) const;
+	float 	toFloat( void ) const;
+	int 	toInt( void ) const;
 };
 std::ostream &operator<<(std::ostream &out, Fixed const &ref);
 
