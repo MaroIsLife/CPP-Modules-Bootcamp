@@ -1,8 +1,6 @@
 #include "FragTrap.hpp"
 
-
-//https://stackoverflow.com/questions/9692675/c-constructor-where-parameters-are-used-by-base-class-constructor
-FragTrap::FragTrap(std::string name): ClapTrap(name)
+FragTrap::FragTrap(std::string name)
 {
 	this->_name = name;
 	this->_hitpoints = 100;

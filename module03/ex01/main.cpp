@@ -9,7 +9,7 @@ int main()
 	lol.attack("corrector");
 	lol.guardGate();
 }
-
+//https://stackoverflow.com/questions/9692675/c-constructor-where-parameters-are-used-by-base-class-constructor
 //https://stackoverflow.com/questions/32018607/c-inheritance-child-class-instance-uses-both-child-and-parent-constructors
 //https://www.studytonight.com/cpp/order-of-constructor-call.php
 //Virtual inheritance = next module
