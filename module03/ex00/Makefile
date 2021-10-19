@@ -1,12 +1,12 @@
-SRC = ClapTrap.cpp ClapTrap.hpp main.cpp
+SRC = ClapTrap.cpp main.cpp
 CC = clang++ -std=c++98
 
-all: fixed
+all: claptrap
 
-fixed:
-	@$(CC) $(SRC) -Wall -Wextra -Werror -o fixed
+claptrap:
+	@$(CC) $(SRC) -Wall -Wextra -Werror -o claptrap
 clean :
-	@rm -rf fixed.o
+	@rm -rf claptrap.o
 fclean : clean
-		@rm -rf ./fixed fixed.dSYM
+		@rm -rf ./claptrap claptrap.dSYM
 re : fclean all
