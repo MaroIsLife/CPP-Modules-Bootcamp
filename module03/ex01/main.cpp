@@ -12,3 +12,4 @@ int main()
 
 //https://stackoverflow.com/questions/32018607/c-inheritance-child-class-instance-uses-both-child-and-parent-constructors
 //https://www.studytonight.com/cpp/order-of-constructor-call.php
+//Virtual inheritance = next module
