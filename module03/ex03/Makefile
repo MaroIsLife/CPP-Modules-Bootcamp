@@ -4,7 +4,7 @@ CC = clang++ -std=c++98
 all: claptrap
 
 claptrap:
-	@$(CC) $(SRC) -Wall -Wextra -Werror -o claptrap
+	@$(CC) $(SRC) -Wall -Wextra -Werror -Wshadow -o claptrap
 clean :
 	@rm -rf claptrap.o
 fclean : clean

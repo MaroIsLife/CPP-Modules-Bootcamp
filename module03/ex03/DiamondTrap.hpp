@@ -11,7 +11,13 @@ private:
 	std::string name;
 public:
 	DiamondTrap(std::string name);
+	DiamondTrap();
 	~DiamondTrap();
+	using ScavTrap::attack;
+	void whoAmI();
 };
+
+//Ambiguous Function (Check Answer#1)
+//https://www.py4u.net/discuss/115823
 
 #endif

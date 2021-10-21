@@ -9,6 +9,13 @@ ScavTrap::ScavTrap(std::string name)
 	std::cout << "<ScavTrap> " << this->_name << " is alive!" << std::endl;
 }
 
+ScavTrap::ScavTrap()
+{
+	this->_hitpoints = 100;
+	this->_energy = 50;
+	this->_attack_damage = 20;
+}
+
 ScavTrap::~ScavTrap()
 {
 	if (this->_hitpoints <= 0)

@@ -9,6 +9,13 @@ FragTrap::FragTrap(std::string name)
 	std::cout << "<FragTrap> " << this->_name << " is alive!" << std::endl;
 }
 
+FragTrap::FragTrap()
+{
+	this->_hitpoints = 100;
+	this->_energy = 50;
+	this->_attack_damage = 20;
+}
+
 FragTrap::~FragTrap()
 {
 	if (this->_hitpoints <= 0)
