@@ -7,6 +7,10 @@ class Dog : public Animal
 public:
 	Dog();
 	~Dog();
+	Dog(Dog &p);
+	Dog	&operator=(Dog &ref);
+	void makeSound() const;
+
 };
 
 #endif

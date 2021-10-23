@@ -3,21 +3,28 @@
 
 Animal::Animal()
 {
-
+	this->type = "Animal";
 }
 
+Animal &Animal::operator=(Animal &ref)
+{
+	this->type = ref.type;
+	return *this;
+}
+
+Animal::Animal(Animal &p)
+{
+	this->type = p.type;
+}
 
 Animal::~Animal()
 {
 
 }
 
-void Animal::makeSound()
+void Animal::makeSound() const
 {
-	if (this->type == "Dog")
-		std::cout << "Woof Woof!" << std::endl;
-	else if (this->type == "Cat")
-		std::cout << "Meow Meow!" << std::endl;
+	std::cout << "*Animal noises*" << std::endl;
 }
 
 std::string Animal::getType()

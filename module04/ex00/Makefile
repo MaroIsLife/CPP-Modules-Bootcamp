@@ -1,4 +1,4 @@
-SRC = Animal.cpp Dog.cpp Cat.cpp main.cpp
+SRC = Animal.cpp Dog.cpp Cat.cpp main.cpp WrongCat.cpp WrongAnimal.cpp
 CC = clang++ -std=c++98
 
 all: animal
