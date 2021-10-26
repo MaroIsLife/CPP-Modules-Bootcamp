@@ -3,6 +3,7 @@
 Cat::Cat()
 {
 	this->type = "Cat";
+	std::cout << "Called Cat Constructor" << std::endl;
 	this->ptr = new Brain();
 }
 
@@ -23,16 +24,21 @@ Cat::~Cat()
 
 Cat &Cat::operator=(Cat &ref)
 {
-	this->type = ref.type;
-	return *this;
+	this->ptr = ref.ptr;
+ 	return *this;
 }
 
 Cat::Cat(Cat &p)
 {
-	this->type = p.type;
+	this->ptr = p.ptr;
 }
 
 void Cat::makeSound() const
 {
 	std::cout << "Meow Meow!" << std::endl;
+}
+
+void Cat::print_address()
+{
+	std::cout << this->ptr << std::endl;
 }

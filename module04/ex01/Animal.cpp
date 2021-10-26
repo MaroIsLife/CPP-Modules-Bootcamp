@@ -4,6 +4,8 @@
 Animal::Animal()
 {
 	this->type = "Animal";
+	std::cout << "Called Animal Constructor" << std::endl;
+
 }
 
 Animal &Animal::operator=(Animal &ref)

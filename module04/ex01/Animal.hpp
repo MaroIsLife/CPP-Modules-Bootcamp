@@ -15,7 +15,7 @@ public:
 	std::string getType();
 	virtual std::string getBrain(int i) = 0;
 	virtual	void setBrain(std::string str, int i) = 0;
-
+	virtual void print_address() = 0;
 };
 
 #endif

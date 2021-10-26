@@ -10,12 +10,13 @@ private:
 	Brain *ptr;
 public:
 	Cat();
-	~Cat();
+	virtual ~Cat();
 	Cat(Cat &p);
 	Cat	&operator=(Cat &ref);
 	void makeSound() const;
 	std::string getBrain(int i);
 	void setBrain(std::string str, int i);
+	void print_address();
 
 
 };

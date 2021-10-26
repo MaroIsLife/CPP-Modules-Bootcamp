@@ -9,12 +9,14 @@ private:
 	Brain *ptr;
 public:
 	Dog();
-	~Dog();
+	virtual ~Dog();
 	Dog(Dog &p);
 	Dog	&operator=(Dog &ref);
 	void makeSound() const;
 	std::string getBrain(int i);
 	void setBrain(std::string str, int i);
+	void print_address();
+
 };
 
 #endif

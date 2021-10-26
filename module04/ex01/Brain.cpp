@@ -2,7 +2,7 @@
 
 Brain::Brain()
 {
-	std::cout << "Created Brain class" << std::endl;
+	std::cout << "Called Brain constructor" << std::endl;
 }
 
 // Brain &Brain::operator=(Brain &ref)
