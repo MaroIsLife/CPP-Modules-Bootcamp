@@ -21,14 +21,14 @@ int main()
 {
 	
 
-	// {
-	// 	// Animal *abc = new Dog();
-	// 	Animal *tseb = new Cat();
-	// 	// fill_object(abc);
-	// 	fill_object(tseb);
-	// 	// delete abc;
-	// 	delete tseb;
-	// }
+	{
+		// Animal *abc = new Dog();
+		Animal *tseb = new Cat();
+		// fill_object(abc);
+		fill_object(tseb);
+		// delete abc;
+		delete tseb;
+	}
 
 	// {
 	// 	Dog *abc = new Dog();
