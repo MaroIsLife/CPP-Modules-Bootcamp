@@ -11,6 +11,7 @@ Animal::Animal()
 Animal &Animal::operator=(Animal &ref)
 {
 	this->type = ref.type;
+	std::cout << "Called Animal Assignation operator" << std::endl;
 	return *this;
 }
 

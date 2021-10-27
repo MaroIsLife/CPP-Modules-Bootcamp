@@ -24,16 +24,19 @@ void Dog::setBrain(std::string str, int i)
 
 Dog &Dog::operator=(Dog &ref)
 {
-	this->ptr = ref.ptr;
-	// this->ptr->ideas = ref.ptr->ideas;
+	this->ptr = new Brain();
+	std::cout << "Assignation constructor called " << std::endl;
+	for (int i = 0; i < 100; i++)
+	{
+		this->ptr->ideas[i] = ref.ptr->ideas[i];
+	}
 	return *this;
 }
 
 Dog::Dog(Dog &p)
 {
 	this->ptr = new Brain();
-	std::cout << "copy constructor called: " << std::endl;
-	std::cout << "This: " << this->ptr << " P: " << p.ptr << std::endl;
+	std::cout << "Copy constructor called " << std::endl;
 	for (int i = 0; i < 100; i++)
 	{
 		this->ptr->ideas[i] = p.ptr->ideas[i];

@@ -14,27 +14,54 @@ void fill_object(Animal *test)
 	{
 		test->setBrain("Dog", i);
 	}
-	// for(int i = 0; i < 100; i++)
-	// {
-	// 	std::cout << test->getBrain(i) << std::endl;
-	// }
+	std::cout << "Filled" << std::endl;
 }
 
 int main()
 {
-	Dog *abc = new Dog();
-	fill_object(abc);
-	Animal *lol = new Dog(*abc);
-	lol->print_address();
-	abc->print_address();
 	
-	// Animal *test_cat = new Cat();
 
-	// fill_object(test_cat);
+	// {
+	// 	// Animal *abc = new Dog();
+	// 	Animal *tseb = new Cat();
+	// 	// fill_object(abc);
+	// 	fill_object(tseb);
+	// 	// delete abc;
+	// 	delete tseb;
+	// }
+
+	// {
+	// 	Dog *abc = new Dog();
+	// 	fill_object(abc);
+	// 	Animal *lol = new Dog(*abc);
+	// 	lol->print_address();
+	// 	abc->print_address();
+
+	// 	std::cout << lol->getBrain(51) << std::endl;
+		
+
+	// 	delete abc;
+	// 	delete lol;
+	// }
+
+	// {
+	// 	Dog basic;
+	// 	for (int i = 0; i < 50; i++)
+	// 	{
+	// 		basic.setBrain("Cat", i);
+	// 	}
+
+	// 	for (int i = 50; i < 100; i++)
+	// 	{
+	// 		basic.setBrain("Dog", i);
+	// 	}
+	// 	Dog tmp = basic;
+	// 	std::cout << tmp.getBrain(51) << std::endl;
+	// 	tmp.print_address();
+	// 	basic.print_address();
+	// }
 
 	
-	// delete test_dog;
-	// delete test_cat;
 
 
 	return (0);

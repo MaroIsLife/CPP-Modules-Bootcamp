@@ -24,13 +24,23 @@ Cat::~Cat()
 
 Cat &Cat::operator=(Cat &ref)
 {
-	this->ptr = ref.ptr;
- 	return *this;
+	this->ptr = new Brain();
+	std::cout << "Assignation constructor called " << std::endl;
+	for (int i = 0; i < 100; i++)
+	{
+		this->ptr->ideas[i] = ref.ptr->ideas[i];
+	}
+	return *this;
 }
 
 Cat::Cat(Cat &p)
 {
-	this->ptr = p.ptr;
+	this->ptr = new Brain();
+	std::cout << "Copy constructor called " << std::endl;
+	for (int i = 0; i < 100; i++)
+	{
+		this->ptr->ideas[i] = p.ptr->ideas[i];
+	}
 }
 
 void Cat::makeSound() const
