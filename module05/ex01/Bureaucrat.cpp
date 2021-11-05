@@ -89,3 +89,8 @@ std::ostream &operator<<(std::ostream &obj, Bureaucrat &abc)
 	obj << ">";
 	return (obj);
 }
+
+void		Bureaucrat::signForm(Form &p)
+{
+	
+}
