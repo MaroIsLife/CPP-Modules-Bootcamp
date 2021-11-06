@@ -92,5 +92,8 @@ std::ostream &operator<<(std::ostream &obj, Bureaucrat &abc)
 
 void		Bureaucrat::signForm(Form &p)
 {
-	
+	if (p.getSign() == true)
+		std::cout << "<" << this->getName() << "> signs " << p.getName() << std::endl;
+	else
+		std::cout << "<" << this->getName() << "> cannot sign <" << p.getName() << "> because grade is low " << std::endl;
 }

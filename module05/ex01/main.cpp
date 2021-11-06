@@ -1,12 +1,15 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
 	try
 	{
-		Bureaucrat abc("Maro", 1);
+		Bureaucrat Maro("Corrector",14);
+		Form abc("Maro",21,13);
+		
 		std::cout << abc << std::endl;
-		abc.incrementGrade();
+		abc.beSigned(Maro);
 	}
 	catch (std::exception &e)
 	{
@@ -15,3 +18,9 @@ int main()
 
 	return (0);
 }
+
+//Create two classes that use each other as data (Forward Declaration)
+//https://stackoverflow.com/questions/4964482/how-to-create-two-classes-in-c-which-use-each-other-as-data
+
+//Weird shit (Initialize by class order)
+//https://stackoverflow.com/questions/1564937/gcc-warning-will-be-initialized-after
