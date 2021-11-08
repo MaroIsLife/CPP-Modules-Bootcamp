@@ -8,7 +8,7 @@ WrongAnimal::WrongAnimal()
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Destructor called (NO VIRTUAL HH)" << std::endl;
+	std::cout << "Destructor Animal called (NO VIRTUAL HH)" << std::endl;
 }
 
 void WrongAnimal::makeSound() const

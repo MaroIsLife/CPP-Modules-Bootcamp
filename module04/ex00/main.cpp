@@ -16,17 +16,21 @@ int main()
 		i->makeSound();
 		j->makeSound();
 		meta->makeSound();
+		delete meta;
+		delete i;
+		delete j;
 	}
 
-	{
-		WrongAnimal *meta = new WrongAnimal();
-		WrongAnimal *i = new WrongCat();
-		std::cout << meta->getType() << " " << std::endl;
-		std::cout << i->getType() << " " << std::endl;
-		meta->makeSound();
-		i->makeSound();
-	}
-
+	// {
+	// 	WrongAnimal *meta = new WrongAnimal();
+	// 	WrongAnimal *i = new WrongCat();
+	// 	std::cout << meta->getType() << " " << std::endl;
+	// 	std::cout << i->getType() << " " << std::endl;
+	// 	meta->makeSound();
+	// 	i->makeSound();
+	// 	delete meta;
+	// 	delete i;
+	// }
 	return (0);
 }
 

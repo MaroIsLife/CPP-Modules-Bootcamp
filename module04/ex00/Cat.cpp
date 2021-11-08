@@ -8,7 +8,7 @@ Cat::Cat()
 
 Cat::~Cat()
 {
-
+	std::cout << "Cat left hh" << std::endl;
 }
 
 Cat &Cat::operator=(Cat &ref)

@@ -1,0 +1,5 @@
+
+iread = $(read)
+
+all:
+	@- $(iread)

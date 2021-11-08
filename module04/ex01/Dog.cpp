@@ -24,7 +24,7 @@ void Dog::setBrain(std::string str, int i)
 
 Dog &Dog::operator=(Dog &ref)
 {
-	this->ptr = new Brain();
+	// this->ptr = new Brain();
 	std::cout << "Assignation constructor called " << std::endl;
 	for (int i = 0; i < 100; i++)
 	{

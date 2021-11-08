@@ -8,7 +8,7 @@ WrongCat::WrongCat()
 
 WrongCat::~WrongCat()
 {
-	std::cout << "Destructor called (NO VIRTUAL HH)" << std::endl;
+	std::cout << "Destructor Cat called (NO VIRTUAL HH)" << std::endl;
 
 }
 

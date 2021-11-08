@@ -19,7 +19,7 @@ Animal::Animal(Animal &p)
 
 Animal::~Animal()
 {
-
+	std::cout << "Animal left hh" << std::endl;
 }
 
 void Animal::makeSound() const

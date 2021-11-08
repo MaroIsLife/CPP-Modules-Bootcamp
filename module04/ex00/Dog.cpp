@@ -7,7 +7,7 @@ Dog::Dog()
 
 Dog::~Dog()
 {
-
+	std::cout << "Dog left hh" << std::endl;
 }
 
 Dog &Dog::operator=(Dog &ref)
