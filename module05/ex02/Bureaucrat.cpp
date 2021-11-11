@@ -97,3 +97,11 @@ void		Bureaucrat::signForm(Form &p)
 	else
 		std::cout << "<" << this->getName() << "> cannot sign <" << p.getName() << "> because grade is low " << std::endl;
 }
+
+void		Bureaucrat::executeForm(Form const &form)
+{
+	if (form.getSign() == true)
+		std::cout << "<" << this->_name << "> executes " << form.target << std::endl; 
+	else
+		std::cout << "<" << this->_name << "> failed to execute "  << form.target << std::endl;
+}

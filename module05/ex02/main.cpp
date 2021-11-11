@@ -1,28 +1,30 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int main()
 {
 	try
 	{
-		Bureaucrat Maro("Corrector",14);
-		ShrubberyCreationForm abc("Samadi");
-		// Form abc("Maro",21,13);
-		
-		std::cout << abc << std::endl;
+		Bureaucrat Maro("Corrector",10);
+		RobotomyRequestForm abc("Form_C");
+		// ShrubberyCreationForm abc("Form_A");
+		// PresidentialPardonForm abc("Form_B");
 		abc.beSigned(Maro);
+		std::cout << abc << std::endl;
+		Maro.executeForm(abc);
+		abc.execute(Maro);
 	}
 	catch (std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-
 	return (0);
 }
 
-//Create two classes that use each other as data (Forward Declaration)
-//https://stackoverflow.com/questions/4964482/how-to-create-two-classes-in-c-which-use-each-other-as-data
+//This exercice is officially ranked #1 as the worst exercice on CPP Module by Maro.
 
-//Weird shit (Initialize by class order)
-//https://stackoverflow.com/questions/1564937/gcc-warning-will-be-initialized-after
+//Random Function
+//https://mathbits.com/MathBits/CompSci/LibraryFunc/rand.htm

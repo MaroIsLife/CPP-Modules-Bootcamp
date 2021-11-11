@@ -1,6 +1,13 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
+
+
+Form::Form() : _name(""), _grade_sign(150), _grade_execute(150)
+{
+
+}
+
 Form::Form(std::string name, int grade_sign, int grade_execute, std::string target) : _name(name), _grade_sign(grade_sign), _grade_execute(grade_execute)
 {
 	Form::GradeTooHighException high;
@@ -36,7 +43,7 @@ const std::string Form::getName()
 	return (this->_name);
 }
 
-bool Form::getSign()
+bool Form::getSign() const
 {
 	return (this->_sign);
 }
@@ -48,6 +55,7 @@ void Form::beSigned(Bureaucrat &p)
 
 	if (p.getGrade() >= (this->_grade_sign))
 	{
+		std::cout << p.getGrade() << this->_grade_sign << std::endl;
 		p.signForm(*this);
 		throw (low);
 	}
@@ -58,12 +66,12 @@ void Form::beSigned(Bureaucrat &p)
 	}
 }
 
-int Form::getGradeSign()
+int Form::getGradeSign() const
 {
 	return (this->_grade_sign);
 }
 
-int Form::getGradeExecute()
+int Form::getGradeExecute() const
 {
 	return (this->_grade_execute);
 }
@@ -89,10 +97,4 @@ std::ostream &operator<<(std::ostream &obj,Form &abc)
 	obj << "\nGrade Execute: ";
 	obj << abc.getGradeExecute();
 	return (obj);
-}
-
-void Form::execute(Bureaucrat const &executor) const
-{
-	
-
 }

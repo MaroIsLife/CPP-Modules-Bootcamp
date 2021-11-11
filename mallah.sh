@@ -1,4 +1,4 @@
 #!/bin/bash
 git add *
+echo -n "Enter your commit: "
 read line
-git commit -m $line
