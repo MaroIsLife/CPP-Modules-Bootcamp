@@ -55,7 +55,6 @@ void Form::beSigned(Bureaucrat &p)
 
 	if (p.getGrade() >= (this->_grade_sign))
 	{
-		std::cout << p.getGrade() << this->_grade_sign << std::endl;
 		p.signForm(*this);
 		throw (low);
 	}

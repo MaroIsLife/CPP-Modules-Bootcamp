@@ -16,6 +16,10 @@ int main()
 	return (0);
 }
 
+
+//Throw in function signature
+//For example, the function declaration: void MyFunction(int i) throw(); tells the compiler that the function does not throw any exceptions.
+
 //Exception class
 //http://www.cplusplus.com/reference/exception/exception/
 
