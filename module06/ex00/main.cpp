@@ -66,7 +66,7 @@ int main(int ac, char **av)
 				std::cout <<  std::fixed << static_cast<float>(a) << "f" << std::endl;
 			}
 		}
-		catch(std::exception &e)
+		catch (std::exception &e)
 		{
 			std::cout << "nanf" << std::endl;
 		}
@@ -85,7 +85,7 @@ int main(int ac, char **av)
 				std::cout << std::fixed << static_cast<double>(a) << std::endl;
 			}
 		}
-		catch(std::exception &e)
+		catch (std::exception &e)
 		{
 			std::cout << "nan" << std::endl;
 		}
@@ -97,8 +97,11 @@ int main(int ac, char **av)
     return 0;
 }
 
+//NULL vs nullptr
+//https://stackoverflow.com/questions/20509734/null-vs-nullptr-why-was-it-replaced
+
 //Regular cast vs static cast vs dynamic cast
-//https://stackoverflow.com/questions/28002/regular-cast-vs-static-cast-vs-dynamic-cast	
+//https://stackoverflow.com/questions/332030/when-should-static-cast-dynamic-cast-const-cast-and-reinterpret-cast-be-used
 
 //https://stackoverflow.com/questions/7099957/implicit-vs-explicit-conversion
 
