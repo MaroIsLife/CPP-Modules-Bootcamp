@@ -59,7 +59,7 @@ int main()
 	Base &abd = *abc;
 	identify(abc);
 	identify(abd);
-	
+	delete abc;
 
 	return(0);
 }
