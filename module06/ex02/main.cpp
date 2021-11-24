@@ -64,6 +64,8 @@ int main()
 	return(0);
 }
 
+//When should you use .tpp extension file
+//https://stackoverflow.com/questions/44774036/why-use-a-tpp-file-when-implementing-templated-functions-and-classes-defined-i
 
 //Dynamic cast return with pointer vs reference
 //https://en.cppreference.com/w/cpp/language/dynamic_cast
