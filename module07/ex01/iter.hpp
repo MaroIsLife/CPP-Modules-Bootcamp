@@ -1,6 +1,7 @@
 #ifndef ITER_HPP
 #define ITER_HPP
+#include <iostream>
 
-template<typename T,typename I, typename F> void	iter(T &a, I &b, F &c);
-
+template<typename T> 
+void	iter(T *a, long long b, void (*c)(T const & x));
 #endif
