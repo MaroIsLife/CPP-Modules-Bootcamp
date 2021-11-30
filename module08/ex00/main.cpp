@@ -24,12 +24,16 @@ int main()
 		v = easyfind<std::vector<int> >(g1, 3);
 		std::cout << *v << std::endl;
 	}
-	catch(std::exception &e)
+	catch (std::exception &e)
 	{
 		std::cout << "Not found" << std::endl;
 	}
 	return (0);
 }
+
+
+//STL Algorithms (GREAT TOOLS)
+//https://www.cplusplus.com/reference/algorithm/
 
 //Why should we use Typename on nested dependant type name
 //Typename tells the compiler that T is a type and not a static member variable

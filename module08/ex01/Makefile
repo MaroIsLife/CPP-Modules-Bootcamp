@@ -1,4 +1,4 @@
-SRC = main.cpp
+SRC = main.cpp Span.cpp
 CC = clang++ -std=c++98
 
 all: span
