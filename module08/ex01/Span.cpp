@@ -12,13 +12,18 @@ Span::~Span()
 
 Span::Span(Span &p)
 {
-	(void)p;
-
+	this->_abc = p._abc;
+	this->_offset = p._offset;
+	this->_biggest = p._biggest;
+	this->_smallest = p._smallest;
 }
 
 Span& Span::operator=(Span &p)
 {
-	(void)p;
+	this->_abc = p._abc;
+	this->_offset = p._offset;
+	this->_biggest = p._biggest;
+	this->_smallest = p._smallest;
 	return (*this);
 }
 
